@@ -5,7 +5,8 @@ We can use it for automating the daily basis tasks
 1)Ask for time<br>
 2)Open Various Programs<br>
 3)Play Music<br>
-4)Sending Email
+4)Sending Email<br>
+5)And you can also able to do various things
 
 <h1>Requirments</h1>
 python3<br>
