@@ -7,6 +7,7 @@ import wikipedia
 import smtplib
 import requests
 from bs4 import BeautifulSoup
+from covid import Covid
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -114,7 +115,7 @@ if __name__ == '__main__':
                 print("Sorry Aryan I am not able to send an email at the moment")
                 speak("Sorry Aryan I am not able to send an email at the moment")
 
-        elif 'Corona virus  in world' in query:
+        elif 'corona virus  in world' in query:
             url = "https://www.worldometers.info/coronavirus/"
             r = requests.get(url)
             myhtml = r.text
@@ -134,10 +135,35 @@ if __name__ == '__main__':
             speak("TOTAL DEATHS CASES IN WORLD IS"+str(tot_deaths))
             speak("TOTAL RECOVERED CASES IN WORLD IS"+str(tot_rec))
 
-        elif ' Weather' in query:
+        elif 'weather' in query:
             speak("please tell city name")
-            cityname = takecommand()
+            cityname = takecommand().capitalize()
             status=weatherststus(cityname=cityname)
+            print(status)
             speak(str(status))
+
+        elif 'covid cases' in query:
+            speak("please tell country name")
+            country = takecommand().capitalize()
+            covid = Covid()
+            data = covid.get_status_by_country_name(country)
+
+            Country_Name = data['country']
+            Confirmed_Cases = data['confirmed']
+            Active_Cases = data['active']
+            Deaths = data['deaths']
+            Recovered = data['recovered']
+            print(" Country Name : ", Country_Name)
+            print("Confirmed Cases : ", Confirmed_Cases)
+            print(" Active Cases : ", Active_Cases)
+            print("Deaths : ", Deaths)
+            print("Recovered : ", Recovered)
+            speak(" Country Name : "+str(Country_Name))
+            speak("Confirmed Cases : "+str(Confirmed_Cases))
+            speak(" Active Cases : "+str(Active_Cases))
+            speak("Deaths : "+str(Deaths))
+            speak("Recovered : "+str(Recovered))
+
+
 
 
