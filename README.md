@@ -22,6 +22,7 @@ pip isntall wikipedia<br>
 pip isntall smtplib<br>
 pip install request requests<br>
 pip install bs4<br>
-Its very simple project.
+Its very simple project sd.
+
 
 
