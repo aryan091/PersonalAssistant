@@ -2,7 +2,7 @@
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-360/)  
 
 # Personal Assistant
-We can use it for automating the daily basis tasks
+We can use it for automating the daily basis tasks.
 
 <h1>What Can We do from Personal Assitant ?</h1>
 1)Ask for time<br>
